@@ -1,0 +1,911 @@
+import tkinter as tk
+from tkinter import messagebox
+import random
+import webbrowser
+import time
+root = tk.Tk()
+root.title('神経衰弱')
+root.geometry("600x500")
+canvas = tk.Canvas(root,width=1000,height=1000)
+canvas.pack()
+times = 0
+cnt = 1
+ri_ = [0,0]
+num = [0,0]
+
+rist = ['空','空','海','海','春','春','夏','夏','秋','秋','冬','冬','雪','雪','風','風','山','山','川','川','木','木','森','森','陸','陸','遺跡','遺跡','鼠','鼠','牛','牛','虎','虎','兔','兔','龍','龍','蛇','蛇','馬','馬','羊','羊','猿','猿','鳥','鳥','犬','犬','猪','猪','獅子','獅子']
+w = random.sample(rist,54)
+
+canvas.create_text(450,420,text= times,tag='tim')
+canvas.create_text(470,420,text= 'セット')
+canvas.create_rectangle(428,400,492,440)
+
+
+def d(ri_):
+    if cnt > 2:
+        if cnt%2 == 1:
+            if ri_[0] == ri_[1]:
+                canvas.delete(num[0])
+                canvas.delete(num[1])
+                global times
+                times += 1
+                canvas.delete('tim')
+                canvas.create_text(450,420,text= times,tag='tim')
+                if ri_[0] == '空':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=空'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '海':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=海'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '春':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=春'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '夏':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=夏'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '秋':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=秋'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '冬':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=冬'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '雪':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=雪'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '風':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=風'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '山':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=山'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '川':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=川'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '木':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=木'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '森':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=森'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '陸':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=陸'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '遺跡':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=遺跡'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '鼠':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=鼠'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '牛':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=牛'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '虎':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=虎'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '兔':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=兔'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '龍':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=龍'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '蛇':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=蛇'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '馬':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=馬'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '羊':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=羊'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '猿':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=猿'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '鳥':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=鳥'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '犬':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=犬'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '猪':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=猪'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if ri_[0] == '獅子':
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl?btitle=獅子'
+                    webbrowser.open(API, new=2, autoraise=True)
+                if times == 27:
+                    #国立国会図書館サーチAPI(NDLサーチ)のAPIを利用
+                    API = 'https://ndlsearch.ndl.go.jp/api/openurl'
+                    webbrowser.open(API, new=2, autoraise=True)
+                    canvas.create_text(300,200,text= 'クリア！')
+            elif ri_[0] != ri_[1]:
+                root.update()
+                time.sleep(1)
+                if num[0] == 'b_1' or num[1] == 'b_1':
+                    button_1.place(x=64,y=14)
+                if num[0] == 'b_2' or num[1] == 'b_2':
+                    button_2.place(x=124,y=14)
+                if num[0] == 'b_3' or num[1] == 'b_3':
+                    button_3.place(x=184,y=14)
+                if num[0] == 'b_4' or num[1] == 'b_4':
+                    button_4.place(x=244,y=14)
+                if num[0] == 'b_5' or num[1] == 'b_5':
+                    button_5.place(x=304,y=14)
+                if num[0] == 'b_6' or num[1] == 'b_6':
+                    button_6.place(x=364,y=14)
+                if num[0] == 'b_7' or num[1] == 'b_7':
+                    button_7.place(x=424,y=14)
+                if num[0] == 'b_8' or num[1] == 'b_8':
+                    button_8.place(x=484,y=14)
+                if num[0] == 'b_9' or num[1] == 'b_9':
+                    button_9.place(x=64,y=68)
+                if num[0] == 'b_10' or num[1] == 'b_10':
+                    button_10.place(x=124,y=68)
+                if num[0] == 'b_11' or num[1] == 'b_11':
+                    button_11.place(x=184,y=68)
+                if num[0] == 'b_12' or num[1] == 'b_12':
+                    button_12.place(x=244,y=68)
+                if num[0] == 'b_13' or num[1] == 'b_13':
+                    button_13.place(x=304,y=68)
+                if num[0] == 'b_14' or num[1] == 'b_14':
+                    button_14.place(x=364,y=68)
+                if num[0] == 'b_15' or num[1] == 'b_15':
+                    button_15.place(x=424,y=68)
+                if num[0] == 'b_16' or num[1] == 'b_16':
+                    button_16.place(x=484,y=68)
+                if num[0] == 'b_17' or num[1] == 'b_17':
+                    button_17.place(x=64,y=123)
+                if num[0] == 'b_18' or num[1] == 'b_18':
+                    button_18.place(x=124,y=123)
+                if num[0] == 'b_19' or num[1] == 'b_19':
+                    button_19.place(x=184,y=123)
+                if num[0] == 'b_20' or num[1] == 'b_20':
+                    button_20.place(x=244,y=123)
+                if num[0] == 'b_21' or num[1] == 'b_21':
+                    button_21.place(x=304,y=123)
+                if num[0] == 'b_22' or num[1] == 'b_22':
+                    button_22.place(x=364,y=123)
+                if num[0] == 'b_23' or num[1] == 'b_23':
+                    button_23.place(x=424,y=123)
+                if num[0] == 'b_24' or num[1] == 'b_24':
+                    button_24.place(x=484,y=123)
+                if num[0] == 'b_25' or num[1] == 'b_25':
+                    button_25.place(x=64,y=179)
+                if num[0] == 'b_26' or num[1] == 'b_26':
+                    button_26.place(x=124,y=179)
+                if num[0] == 'b_27' or num[1] == 'b_27':
+                    button_27.place(x=184,y=179)
+                if num[0] == 'b_28' or num[1] == 'b_28':
+                    button_28.place(x=244,y=179)
+                if num[0] == 'b_29' or num[1] == 'b_29':
+                    button_29.place(x=304,y=179)
+                if num[0] == 'b_30' or num[1] == 'b_30':
+                    button_30.place(x=364,y=179)
+                if num[0] == 'b_31' or num[1] == 'b_31':
+                    button_31.place(x=424,y=179)
+                if num[0] == 'b_32' or num[1] == 'b_32':
+                    button_32.place(x=484,y=179)
+                if num[0] == 'b_33' or num[1] == 'b_33':
+                    button_33.place(x=64,y=233)
+                if num[0] == 'b_34' or num[1] == 'b_34':
+                    button_34.place(x=124,y=233)
+                if num[0] == 'b_35' or num[1] == 'b_35':
+                    button_35.place(x=184,y=233)
+                if num[0] == 'b_36' or num[1] == 'b_36':
+                    button_36.place(x=244,y=233)
+                if num[0] == 'b_37' or num[1] == 'b_37':
+                    button_37.place(x=304,y=233)
+                if num[0] == 'b_38' or num[1] == 'b_38':
+                    button_38.place(x=364,y=233)
+                if num[0] == 'b_39' or num[1] == 'b_39':
+                    button_39.place(x=424,y=233)
+                if num[0] == 'b_40' or num[1] == 'b_40':
+                    button_40.place(x=484,y=233)
+                if num[0] == 'b_41' or num[1] == 'b_41':
+                    button_41.place(x=64,y=288)
+                if num[0] == 'b_42' or num[1] == 'b_42':
+                    button_42.place(x=124,y=288)
+                if num[0] == 'b_43' or num[1] == 'b_43':
+                    button_43.place(x=184,y=288)
+                if num[0] == 'b_44' or num[1] == 'b_44':
+                    button_44.place(x=244,y=288)
+                if num[0] == 'b_45' or num[1] == 'b_45':
+                    button_45.place(x=304,y=288)
+                if num[0] == 'b_46' or num[1] == 'b_46':
+                    button_46.place(x=364,y=288)
+                if num[0] == 'b_47' or num[1] == 'b_47':
+                    button_47.place(x=424,y=288)
+                if num[0] == 'b_48' or num[1] == 'b_48':
+                    button_48.place(x=484,y=288)
+                if num[0] == 'b_49' or num[1] == 'b_49':
+                    button_49.place(x=64,y=343)
+                if num[0] == 'b_50' or num[1] == 'b_50':
+                    button_50.place(x=124,y=343)
+                if num[0] == 'b_51' or num[1] == 'b_51':
+                    button_51.place(x=184,y=343)
+                if num[0] == 'b_52' or num[1] == 'b_52':
+                    button_52.place(x=244,y=343)
+                if num[0] == 'b_53' or num[1] == 'b_53':
+                    button_53.place(x=304,y=343)
+                if num[0] == 'b_54' or num[1] == 'b_54':
+                    button_54.place(x=364,y=343)
+
+def b_1(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,14,112,54,tag="b_1")
+    canvas.create_text(90,34,text= w[0],tag = "b_1")
+    ri_[cnt%2] = w[0]
+    num[cnt%2] = "b_1"
+    button_1.place_forget()
+    d(ri_)
+def b_2(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,14,172,54,tag = "b_2")
+    canvas.create_text(150,34,text= w[1],tag = "b_2")
+    ri_[cnt%2] = w[1]
+    num[cnt%2] = "b_2"
+    button_2.place_forget()
+    d(ri_)
+def b_3(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,14,232,54,tag = "b_3")
+    canvas.create_text(210,34,text= w[2],tag = "b_3")
+    ri_[cnt%2] = w[2]
+    num[cnt%2] = "b_3"
+    button_3.place_forget()
+    d(ri_)
+def b_4(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,14,292,54,tag = "b_4")
+    canvas.create_text(270,34,text= w[3],tag = "b_4")
+    ri_[cnt%2] = w[3]
+    num[cnt%2] = "b_4"
+    button_4.place_forget()
+    d(ri_)
+def b_5(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,14,352,54,tag = "b_5")
+    canvas.create_text(330,34,text= w[4],tag = "b_5")
+    ri_[cnt%2] = w[4]
+    num[cnt%2] = "b_5"
+    button_5.place_forget()
+    d(ri_)
+def b_6(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,14,412,54,tag = "b_6")
+    canvas.create_text(390,34,text= w[5],tag = "b_6")
+    ri_[cnt%2] = w[5]
+    num[cnt%2] = "b_6"
+    button_6.place_forget()
+    d(ri_)
+def b_7(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(428,14,472,54,tag = "b_7")
+    canvas.create_text(450,34,text= w[6],tag = "b_7")
+    ri_[cnt%2] = w[6]
+    num[cnt%2] = "b_7"
+    button_7.place_forget()
+    d(ri_)
+def b_8(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(488,14,532,54,tag = "b_8")
+    canvas.create_text(510,34,text= w[7],tag = "b_8")
+    ri_[cnt%2] = w[7]
+    num[cnt%2] = "b_8"
+    button_8.place_forget()
+    d(ri_)
+def b_9(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,67,112,109,tag = "b_9")
+    canvas.create_text(90,89,text= w[8],tag = "b_9")
+    ri_[cnt%2] = w[8]
+    num[cnt%2] = "b_9"
+    button_9.place_forget()
+    d(ri_)
+def b_10(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,67,172,109,tag = "b_10")
+    canvas.create_text(150,89,text= w[9],tag = "b_10")
+    ri_[cnt%2] = w[9]
+    num[cnt%2] = "b_10"
+    button_10.place_forget()
+    d(ri_)
+def b_11(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,67,232,109,tag = "b_11")
+    canvas.create_text(210,89,text= w[10],tag = "b_11")
+    ri_[cnt%2] = w[10]
+    num[cnt%2] = "b_11"
+    button_11.place_forget()
+    d(ri_)
+def b_12(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,67,292,109,tag = "b_12")
+    canvas.create_text(270,89,text= w[11],tag = "b_12")
+    ri_[cnt%2] = w[11]
+    num[cnt%2] = "b_12"
+    button_12.place_forget()
+    d(ri_)
+def b_13(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,67,352,109,tag = "b_13")
+    canvas.create_text(330,89,text= w[12],tag = "b_13")
+    ri_[cnt%2] = w[12]
+    num[cnt%2] = "b_13"
+    button_13.place_forget()
+    d(ri_)
+def b_14(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,67,412,109,tag = "b_14")
+    canvas.create_text(390,89,text= w[13],tag = "b_14")
+    ri_[cnt%2] = w[13]
+    num[cnt%2] = "b_14"
+    button_14.place_forget()
+    d(ri_)
+def b_15(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(428,67,472,109,tag = "b_15")
+    canvas.create_text(450,89,text= w[14],tag = "b_15")
+    ri_[cnt%2] = w[14]
+    num[cnt%2] = "b_15"
+    button_15.place_forget()
+    d(ri_)
+def b_16(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(488,67,532,109,tag = "b_16")
+    canvas.create_text(510,89,text= w[15],tag = "b_16")
+    ri_[cnt%2] = w[15]
+    num[cnt%2] = "b_16"
+    button_16.place_forget()
+    d(ri_)
+def b_17(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,123,112,164,tag = "b_17")
+    canvas.create_text(90,144,text= w[16],tag = "b_17")
+    ri_[cnt%2] = w[16]
+    num[cnt%2] = "b_17"
+    button_17.place_forget()
+    d(ri_)
+def b_18(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,122,172,164,tag = "b_18")
+    canvas.create_text(150,144,text= w[17],tag = "b_18")
+    ri_[cnt%2] = w[17]
+    num[cnt%2] = "b_18"
+    button_18.place_forget()
+    d(ri_)
+def b_19(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,122,232,164,tag = "b_19")
+    canvas.create_text(210,144,text= w[18],tag = "b_19")
+    ri_[cnt%2] = w[18]
+    num[cnt%2] = "b_19"
+    button_19.place_forget()
+    d(ri_)
+def b_20(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,122,292,164,tag = "b_20")
+    canvas.create_text(270,144,text= w[19],tag = "b_20")
+    ri_[cnt%2] = w[19]
+    num[cnt%2] = "b_20"
+    button_20.place_forget()
+    d(ri_)
+def b_21(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,122,352,164,tag = "b_21")
+    canvas.create_text(330,144,text= w[20],tag = "b_21")
+    ri_[cnt%2] = w[20]
+    num[cnt%2] = "b_21"
+    button_21.place_forget()
+    d(ri_)
+def b_22(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,122,412,164,tag = "b_22")
+    canvas.create_text(390,144,text= w[21],tag = "b_22")
+    ri_[cnt%2] = w[21]
+    num[cnt%2] = "b_22"
+    button_22.place_forget()
+    d(ri_)
+def b_23(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(428,122,472,164,tag = "b_23")
+    canvas.create_text(450,144,text= w[22],tag = "b_23")
+    ri_[cnt%2] = w[22]
+    num[cnt%2] = "b_23"
+    button_23.place_forget()
+    d(ri_)
+def b_24(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(488,122,532,164,tag = "b_24")
+    canvas.create_text(510,144,text= w[23],tag = "b_24")
+    ri_[cnt%2] = w[23]
+    num[cnt%2] = "b_24"
+    button_24.place_forget()
+    d(ri_)
+def b_25(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,178,112,220,tag = "b_25")
+    canvas.create_text(90,199,text= w[24],tag = "b_25")
+    ri_[cnt%2] = w[24]
+    num[cnt%2] = "b_25"
+    button_25.place_forget()
+    d(ri_)
+def b_26(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,178,172,220,tag = "b_26")
+    canvas.create_text(150,199,text= w[25],tag = "b_26")
+    ri_[cnt%2] = w[25]
+    num[cnt%2] = "b_26"
+    button_26.place_forget()
+    d(ri_)
+def b_27(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,178,232,220,tag = "b_27")
+    canvas.create_text(210,199,text= w[26],tag = "b_27")
+    ri_[cnt%2] = w[26]
+    num[cnt%2] = "b_27"
+    button_27.place_forget()
+    d(ri_)
+def b_28(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,178,292,220,tag = "b_28")
+    canvas.create_text(270,199,text= w[27],tag = "b_28")
+    ri_[cnt%2] = w[27]
+    num[cnt%2] = "b_28"
+    button_28.place_forget()
+    d(ri_)
+def b_29(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,178,352,220,tag = "b_29")
+    canvas.create_text(330,199,text= w[28],tag = "b_29")
+    ri_[cnt%2] = w[28]
+    num[cnt%2] = "b_29"
+    button_29.place_forget()
+    d(ri_)
+def b_30(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,178,412,220,tag = "b_30")
+    canvas.create_text(390,199,text= w[29],tag = "b_30")
+    ri_[cnt%2] = w[29]
+    num[cnt%2] = "b_30"
+    button_30.place_forget()
+    d(ri_)
+def b_31(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(428,178,472,220,tag = "b_31")
+    canvas.create_text(450,199,text= w[30],tag = "b_31")
+    ri_[cnt%2] = w[30]
+    num[cnt%2] = "b_31"
+    button_31.place_forget()
+    d(ri_)
+def b_32(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(488,178,532,220,tag = "b_32")
+    canvas.create_text(510,199,text= w[31],tag = "b_32")
+    ri_[cnt%2] = w[31]
+    num[cnt%2] = "b_32"
+    button_32.place_forget()
+    d(ri_)
+def b_33(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,232,112,274,tag = "b_33")
+    canvas.create_text(90,254,text= w[32],tag = "b_33")
+    ri_[cnt%2] = w[32]
+    num[cnt%2] = "b_33"
+    button_33.place_forget()
+    d(ri_)
+def b_34(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,232,172,274,tag = "b_34")
+    canvas.create_text(150,254,text= w[33],tag = "b_34")
+    ri_[cnt%2] = w[33]
+    num[cnt%2] = "b_34"
+    button_34.place_forget()
+    d(ri_)
+def b_35(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,232,232,274,tag = "b_35")
+    canvas.create_text(210,254,text= w[34],tag = "b_35")
+    ri_[cnt%2] = w[34]
+    num[cnt%2] = "b_35"
+    button_35.place_forget()
+    d(ri_)
+def b_36(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,232,292,274,tag = "b_36")
+    canvas.create_text(270,254,text= w[35],tag = "b_36")
+    ri_[cnt%2] = w[35]
+    num[cnt%2] = "b_36"
+    button_36.place_forget()
+    d(ri_)
+def b_37(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,232,352,274,tag = "b_37")
+    canvas.create_text(330,254,text= w[36],tag = "b_37")
+    ri_[cnt%2] = w[36]
+    num[cnt%2] = "b_37"
+    button_37.place_forget()
+    d(ri_)
+def b_38(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,232,412,274,tag = "b_38")
+    canvas.create_text(390,254,text= w[37],tag = "b_38")
+    ri_[cnt%2] = w[37]
+    num[cnt%2] = "b_38"
+    button_38.place_forget()
+    d(ri_)
+def b_39(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(428,232,472,274,tag = "b_39")
+    canvas.create_text(450,254,text= w[38],tag = "b_39")
+    ri_[cnt%2] = w[38]
+    num[cnt%2] = "b_39"
+    button_39.place_forget()
+    d(ri_)
+def b_40(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(488,232,532,274,tag = "b_40")
+    canvas.create_text(510,254,text= w[39],tag = "b_40")
+    ri_[cnt%2] = w[39]
+    num[cnt%2] = "b_40"
+    button_40.place_forget()
+    d(ri_)
+def b_41(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,287,112,329,tag = "b_41")
+    canvas.create_text(90,309,text= w[40],tag = "b_41")
+    ri_[cnt%2] = w[40]
+    num[cnt%2] = "b_41"
+    button_41.place_forget()
+    d(ri_)
+def b_42(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,287,172,329,tag = "b_42")
+    canvas.create_text(150,309,text= w[41],tag = "b_42")
+    ri_[cnt%2] = w[41]
+    num[cnt%2] = "b_42"
+    button_42.place_forget()
+    d(ri_)
+def b_43(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,287,232,329,tag = "b_43")
+    canvas.create_text(210,309,text= w[42],tag = "b_43")
+    ri_[cnt%2] = w[42]
+    num[cnt%2] = "b_43"
+    button_43.place_forget()
+    d(ri_)
+def b_44(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,287,292,329,tag = "b_44")
+    canvas.create_text(270,309,text= w[43],tag = "b_44")
+    ri_[cnt%2] = w[43]
+    num[cnt%2] = "b_44"
+    button_44.place_forget()
+    d(ri_)
+def b_45(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,287,352,329,tag = "b_45")
+    canvas.create_text(330,309,text= w[44],tag = "b_45")
+    ri_[cnt%2] = w[44]
+    num[cnt%2] = "b_45"
+    button_45.place_forget()
+    d(ri_)
+def b_46(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,287,412,329,tag = "b_46")
+    canvas.create_text(390,309,text= w[45],tag = "b_46")
+    ri_[cnt%2] = w[45]
+    num[cnt%2] = "b_46"
+    button_46.place_forget()
+    d(ri_)
+def b_47(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(428,287,472,329,tag = "b_47")
+    canvas.create_text(450,309,text= w[46],tag = "b_47")
+    ri_[cnt%2] = w[46]
+    num[cnt%2] = "b_47"
+    button_47.place_forget()
+    d(ri_)
+def b_48(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(488,287,532,329,tag = "b_48")
+    canvas.create_text(510,309,text= w[47],tag = "b_48")
+    ri_[cnt%2] = w[47]
+    num[cnt%2] = "b_48"
+    button_48.place_forget()
+    d(ri_)
+def b_49(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(68,342,112,384,tag = "b_49")
+    canvas.create_text(90,364,text= w[48],tag = "b_49")
+    ri_[cnt%2] = w[48]
+    num[cnt%2] = "b_49"
+    button_49.place_forget()
+    d(ri_)
+def b_50(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(128,342,172,384,tag = "b_50")
+    canvas.create_text(150,364,text= w[49],tag = "b_50")
+    ri_[cnt%2] = w[49]
+    num[cnt%2] = "b_50"
+    button_50.place_forget()
+    d(ri_)
+def b_51(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(188,342,232,384,tag = "b_51")
+    canvas.create_text(210,364,text= w[50],tag = "b_51")
+    ri_[cnt%2] = w[50]
+    num[cnt%2] = "b_51"
+    button_51.place_forget()
+    d(ri_)
+def b_52(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(248,342,292,384,tag = "b_52")
+    canvas.create_text(270,364,text= w[51],tag = "b_52")
+    ri_[cnt%2] = w[51]
+    num[cnt%2] = "b_52"
+    button_52.place_forget()
+    d(ri_)
+def b_53(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(308,342,352,384,tag = "b_53")
+    canvas.create_text(330,364,text= w[52],tag = "b_53")
+    ri_[cnt%2] = w[52]
+    num[cnt%2] = "b_53"
+    button_53.place_forget()
+    d(ri_)
+def b_54(event):
+    global cnt
+    cnt += 1
+    canvas.create_rectangle(368,342,412,384,tag = "b_54")
+    canvas.create_text(390,364,text= w[53],tag = "b_54")
+    ri_[cnt%2] = w[53]
+    num[cnt%2] = "b_54"
+    button_54.place_forget()
+    d(ri_)
+
+button_1 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_2 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_3 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_4 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_5 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_6 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_7 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_8 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_9 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_10 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_11 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_12 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_13 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_14 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_15 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_16 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_17 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_18 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_19 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_20 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_21 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_22 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_23 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_24 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_25 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_26 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_27 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_28 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_29 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_30 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_31 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_32 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_33 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_34 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_35 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_36 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_37 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_38 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_39 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_40 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_41 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_42 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_43 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_44 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_45 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_46 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_47 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_48 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_49 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_50 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_51 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_52 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_53 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+button_54 = tk.Button(root,text="    ",relief='flat',bg="Black",state=tk.NORMAL,width=6,height=2)
+
+button_1.bind("<Button-1>",b_1)
+button_2.bind("<Button-1>",b_2)
+button_3.bind("<Button-1>",b_3)
+button_4.bind("<Button-1>",b_4)
+button_5.bind("<Button-1>",b_5)
+button_6.bind("<Button-1>",b_6)
+button_7.bind("<Button-1>",b_7)
+button_8.bind("<Button-1>",b_8)
+button_9.bind("<Button-1>",b_9)
+button_10.bind("<Button-1>",b_10)
+button_11.bind("<Button-1>",b_11)
+button_12.bind("<Button-1>",b_12)
+button_13.bind("<Button-1>",b_13)
+button_14.bind("<Button-1>",b_14)
+button_15.bind("<Button-1>",b_15)
+button_16.bind("<Button-1>",b_16)
+button_17.bind("<Button-1>",b_17)
+button_18.bind("<Button-1>",b_18)
+button_19.bind("<Button-1>",b_19)
+button_20.bind("<Button-1>",b_20)
+button_21.bind("<Button-1>",b_21)
+button_22.bind("<Button-1>",b_22)
+button_23.bind("<Button-1>",b_23)
+button_24.bind("<Button-1>",b_24)
+button_25.bind("<Button-1>",b_25)
+button_26.bind("<Button-1>",b_26)
+button_27.bind("<Button-1>",b_27)
+button_28.bind("<Button-1>",b_28)
+button_29.bind("<Button-1>",b_29)
+button_30.bind("<Button-1>",b_30)
+button_31.bind("<Button-1>",b_31)
+button_32.bind("<Button-1>",b_32)
+button_33.bind("<Button-1>",b_33)
+button_34.bind("<Button-1>",b_34)
+button_35.bind("<Button-1>",b_35)
+button_36.bind("<Button-1>",b_36)
+button_37.bind("<Button-1>",b_37)
+button_38.bind("<Button-1>",b_38)
+button_39.bind("<Button-1>",b_39)
+button_40.bind("<Button-1>",b_40)
+button_41.bind("<Button-1>",b_41)
+button_42.bind("<Button-1>",b_42)
+button_43.bind("<Button-1>",b_43)
+button_44.bind("<Button-1>",b_44)
+button_45.bind("<Button-1>",b_45)
+button_46.bind("<Button-1>",b_46)
+button_47.bind("<Button-1>",b_47)
+button_48.bind("<Button-1>",b_48)
+button_49.bind("<Button-1>",b_49)
+button_50.bind("<Button-1>",b_50)
+button_51.bind("<Button-1>",b_51)
+button_52.bind("<Button-1>",b_52)
+button_53.bind("<Button-1>",b_53)
+button_54.bind("<Button-1>",b_54)
+
+button_1.place(x=64,y=14)
+button_2.place(x=124,y=14)
+button_3.place(x=184,y=14)
+button_4.place(x=244,y=14)
+button_5.place(x=304,y=14)
+button_6.place(x=364,y=14)
+button_7.place(x=424,y=14)
+button_8.place(x=484,y=14)
+button_9.place(x=64,y=68)
+button_10.place(x=124,y=68)
+button_11.place(x=184,y=68)
+button_12.place(x=244,y=68)
+button_13.place(x=304,y=68)
+button_14.place(x=364,y=68)
+button_15.place(x=424,y=68)
+button_16.place(x=484,y=68)
+button_17.place(x=64,y=123)
+button_18.place(x=124,y=123)
+button_19.place(x=184,y=123)
+button_20.place(x=244,y=123)
+button_21.place(x=304,y=123)
+button_22.place(x=364,y=123)
+button_23.place(x=424,y=123)
+button_24.place(x=484,y=123)
+button_25.place(x=64,y=179)
+button_26.place(x=124,y=179)
+button_27.place(x=184,y=179)
+button_28.place(x=244,y=179)
+button_29.place(x=304,y=179)
+button_30.place(x=364,y=179)
+button_31.place(x=424,y=179)
+button_32.place(x=484,y=179)
+button_33.place(x=64,y=233)
+button_34.place(x=124,y=233)
+button_35.place(x=184,y=233)
+button_36.place(x=244,y=233)
+button_37.place(x=304,y=233)
+button_38.place(x=364,y=233)
+button_39.place(x=424,y=233)
+button_40.place(x=484,y=233)
+button_41.place(x=64,y=288)
+button_42.place(x=124,y=288)
+button_43.place(x=184,y=288)
+button_44.place(x=244,y=288)
+button_45.place(x=304,y=288)
+button_46.place(x=364,y=288)
+button_47.place(x=424,y=288)
+button_48.place(x=484,y=288)
+button_49.place(x=64,y=343)
+button_50.place(x=124,y=343)
+button_51.place(x=184,y=343)
+button_52.place(x=244,y=343)
+button_53.place(x=304,y=343)
+button_54.place(x=364,y=343)
+
+root.mainloop()
